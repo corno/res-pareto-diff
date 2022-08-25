@@ -1,28 +1,15 @@
-import * as pt from "pareto-core-types"
 import * as pl from "pareto-core-lib"
 import * as pr from "pareto-core-raw"
 
 import * as diff from "diff"
 
+import * as api from "api-pareto-diff"
 
-import * as api from "res-pareto-diff"
 
-
-export function diffData(
-    $: {
-        originalData: string,
-        changedData: string,
-        newline: string,
-    }
-): pt.Array<api.TMultilinePart> {
+export const diffData: api.DiffData = ($) => {
 
     const changes = diff.diffLines($.originalData, $.changedData, { newlineIsToken: false })
 
-    // diff.diffLines({
-    //     originalString: $.expectedData,
-    //     newString: $.actualData,
-    //     options: { newlineIsToken: false }
-    // })
     const parts: api.TMultilinePart[] = []
 
     const lineOffset = 0
