@@ -48,5 +48,9 @@ export const diffData: api.DiffData = ($) => {
         }
 
     })
-    return pr.wrapRawArray(parts)
+    if (parts.length === 0) {
+        return null
+    } else {
+        return pr.wrapRawArray(parts)
+    }
 }
