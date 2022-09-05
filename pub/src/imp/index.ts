@@ -1,2 +1,2 @@
-export * from "./diffData"
-export * from "./stringsAreEqual"
+export * from "./public/diffData"
+export * from "./public/stringsAreEqual"

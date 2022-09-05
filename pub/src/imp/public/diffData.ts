@@ -1,14 +1,14 @@
 import * as pl from "pareto-core-lib"
 import * as pr from "pareto-core-raw"
 
-import * as diff from "diff"
-
 import * as api from "api-pareto-diff"
+import { add } from "../private/add"
+import { diffLines } from "../private/diffLines"
 
 
-export const diffData: api.DiffData = ($) => {
+export const diffData: api.FDiffData = ($) => {
 
-    const changes = diff.diffLines($.originalData, $.changedData, { newlineIsToken: false })
+    const changes = diffLines($.originalData, $.changedData, { newlineIsToken: false })
 
     const parts: api.TMultilinePart[] = []
 
@@ -32,7 +32,7 @@ export const diffData: api.DiffData = ($) => {
                     type: ["added", {}],
                 })
             }
-            lineCountOfChanged += change.count
+            lineCountOfChanged = add(lineCountOfChanged, change.count)
         } else {
             if (change.removed) {
                 parts.push({
@@ -42,9 +42,9 @@ export const diffData: api.DiffData = ($) => {
                     type: ["removed", {}],
                 })
             } else {
-                lineCountOfChanged += change.count
+                lineCountOfChanged = add(lineCountOfChanged, change.count)
             }
-            lineCountOfOriginal += change.count
+            lineCountOfOriginal = add(lineCountOfChanged, change.count)
         }
 
     })

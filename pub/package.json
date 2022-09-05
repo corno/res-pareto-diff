@@ -18,7 +18,7 @@
   },
   "version": "0.9.0",
   "dependencies": {
-    "api-pareto-diff": "^0.5.1",
+    "api-pareto-diff": "^0.7.0",
     "diff": "^5.1.0",
     "pareto-core-lib": "^0.8.0",
     "pareto-core-raw": "^0.2.0"
@@ -26,5 +26,5 @@
   "devDependencies": {
     "@types/diff": "^5.0.2"
   },
-  "content-fingerprint": "a3196bdded3349ba2de9c4d2e18646b4be681444"
+  "content-fingerprint": "29d4da54f0397d24deca7e53b7a2f53c942b6f67"
 }
