@@ -1,5 +1,5 @@
 import * as diff from "api-pareto-diff"
 
-export const f_stringsAreEqual: diff.FStringsAreEqual = ($) => {
+export const fStringsAreEqual: diff.FStringsAreEqual = ($) => {
     return $.a === $.b
 }

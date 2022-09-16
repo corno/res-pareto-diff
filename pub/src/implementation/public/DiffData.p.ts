@@ -2,11 +2,12 @@ import * as pl from "pareto-core-lib"
 import * as pr from "pareto-core-raw"
 
 import * as api from "api-pareto-diff"
-import { add } from "../private/add"
-import { diffLines } from "../private/diffLines"
+
+import { add } from "../private/add.p"
+import { diffLines } from "../private/diffLines.p"
 
 
-export const f_diffData: api.FDiffData = ($) => {
+export const fDiffData: api.FDiffData = ($) => {
 
     const changes = diffLines($.originalData, $.changedData, { newlineIsToken: false })
 
