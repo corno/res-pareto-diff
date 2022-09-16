@@ -1,10 +1,10 @@
-import * as pl from "pareto-core-lib"
-import * as pr from "pareto-core-raw"
+import * as pi from "pareto-core-internals"
 
 import * as api from "api-pareto-diff"
 
 import { add } from "../private/add.p"
 import { diffLines } from "../private/diffLines.p"
+import { panic } from "../private/panic"
 
 
 export const fDiffData: api.FDiffData = ($) => {
@@ -19,18 +19,18 @@ export const fDiffData: api.FDiffData = ($) => {
     let lineCountOfChanged = lineOffset
     changes.forEach((change) => {
         if (change.count === undefined) {
-            pl.panic("unexpected: no line count")
+            panic("unexpected: no line count")
         }
         if (change.added) {
             if (change.removed) {
                 //added and removed???
-                pl.panic("unexpected: added and removed")
+                panic("unexpected: added and removed")
             } else {
                 parts.push({
                     startLineInOriginal: lineCountOfOriginal,
                     startLineInChanged: lineCountOfChanged,
-                    lines: change.value.split($.newline),
-                    type: ["added", {}],
+                    lines: pi.wrapRawArray(change.value.split($.newline)),
+                    type: ["added", null],
                 })
             }
             lineCountOfChanged = add(lineCountOfChanged, change.count)
@@ -39,8 +39,8 @@ export const fDiffData: api.FDiffData = ($) => {
                 parts.push({
                     startLineInOriginal: lineCountOfOriginal,
                     startLineInChanged: lineCountOfChanged,
-                    lines: change.value.split($.newline),
-                    type: ["removed", {}],
+                    lines: pi.wrapRawArray(change.value.split($.newline)),
+                    type: ["removed", null],
                 })
             } else {
                 lineCountOfChanged = add(lineCountOfChanged, change.count)
@@ -52,6 +52,6 @@ export const fDiffData: api.FDiffData = ($) => {
     if (parts.length === 0) {
         return null
     } else {
-        return pr.wrapRawArray(parts)
+        return pi.wrapRawArray(parts)
     }
 }
