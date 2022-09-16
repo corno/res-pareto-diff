@@ -6,7 +6,7 @@ import { add } from "../private/add"
 import { diffLines } from "../private/diffLines"
 
 
-export const diffData: api.FDiffData = ($) => {
+export const f_diffData: api.FDiffData = ($) => {
 
     const changes = diffLines($.originalData, $.changedData, { newlineIsToken: false })
 
