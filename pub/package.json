@@ -20,10 +20,10 @@
   "dependencies": {
     "api-pareto-diff": "^0.8.0",
     "diff": "^5.1.0",
-    "pareto-core-internals": "^0.7.0"
+    "pareto-core-internals": "^0.8.0"
   },
   "devDependencies": {
     "@types/diff": "^5.0.2"
   },
-  "content-fingerprint": "cbf8fa9292f6dc80581ec88db45376a38722022d"
+  "content-fingerprint": "30ed41024008d1b1d714656d8b636f96fec19b13"
 }
