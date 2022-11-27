@@ -18,12 +18,12 @@
   },
   "version": "0.13.0",
   "dependencies": {
-    "api-pareto-diff": "^0.8.0",
     "diff": "^5.1.0",
-    "pareto-core-internals": "^0.9.0"
+    "pareto-core-internals": "^0.11.0"
   },
   "devDependencies": {
     "@types/diff": "^5.0.2"
   },
-  "content-fingerprint": "68669c3f1e468c03054c4237b1574e6219659e9b"
+  "interface-fingerprint": "2265f04e4bff57d56364bd72b727ab611e1da514",
+  "content-fingerprint": "f48b8ead388e8b62b1b1fde09dff27c57d2ca69b"
 }

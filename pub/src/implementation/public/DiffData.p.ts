@@ -1,6 +1,6 @@
 import * as pi from "pareto-core-internals"
 
-import * as api from "api-pareto-diff"
+import * as api from "../../interface"
 
 import { add } from "../private/add.p"
 import { diffLines } from "../private/diffLines.p"
