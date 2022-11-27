@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/corno/res-pareto-diff.git"
   },
-  "version": "0.13.0",
+  "version": "0.13.1",
   "dependencies": {
     "diff": "^5.1.0",
     "pareto-core-internals": "^0.11.0"
