@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/corno/res-pareto-diff.git"
   },
-  "version": "0.13.1",
+  "version": "0.13.2",
   "dependencies": {
     "diff": "^5.1.0",
     "pareto-core-internals": "^0.11.0"
@@ -25,5 +25,5 @@
     "@types/diff": "^5.0.2"
   },
   "interface-fingerprint": "2265f04e4bff57d56364bd72b727ab611e1da514",
-  "content-fingerprint": "f48b8ead388e8b62b1b1fde09dff27c57d2ca69b"
+  "content-fingerprint": "6e905abb9c10418b09171eeb445a1d0a2b0c73c3"
 }
