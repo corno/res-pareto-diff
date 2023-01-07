@@ -22,6 +22,6 @@ export type TStringComparisonData = {
     readonly "b": string
 }
 
-export type FdiffData = ($: TDiffData) => TDiffDataResult
+export type FDiffData = ($: TDiffData) => TDiffDataResult
 
-export type FstringsAreEqual = ($: TStringComparisonData) => boolean
+export type FStringsAreEqual = ($: TStringComparisonData) => boolean

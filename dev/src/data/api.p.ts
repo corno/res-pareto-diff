@@ -55,11 +55,11 @@ export const api: NAPI.TModuleDefinition = {
             })
         }),
         'functions': wd({
-            "stringsAreEqual": {
+            "StringsAreEqual": {
                 'data': ref("StringComparisonData"),
                 'return value': bln(),
             },
-            "diffData": {
+            "DiffData": {
                 'data': ref("DiffData"),
                 'return value': ref("DiffDataResult"),
             }
@@ -72,12 +72,12 @@ export const api: NAPI.TModuleDefinition = {
         algorithms: wd({
             "stringsAreEqual": ["algorithm", {
                 type: ["function", {
-                    "function": "stringsAreEqual"
+                    "function": "StringsAreEqual"
                 }]
             } ],
             "diffData": ["algorithm", {
                 type: ["function", {
-                    "function": "diffData"
+                    "function": "DiffData"
                 }]
             } ]
         })
