@@ -24,6 +24,5 @@
   "devDependencies": {
     "@types/diff": "^5.0.2"
   },
-  "interface-fingerprint": "2265f04e4bff57d56364bd72b727ab611e1da514",
-  "content-fingerprint": "6e905abb9c10418b09171eeb445a1d0a2b0c73c3"
+  "content-fingerprint": "769550f74ecaf33aa3be38f51799283baa0cfeba"
 }

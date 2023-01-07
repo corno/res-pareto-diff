@@ -1,13 +1,11 @@
 import * as pi from "pareto-core-internals"
 
-import * as api from "../../interface"
+import * as api from "../api"
 
-import { add } from "../private/add.p"
-import { diffLines } from "../private/diffLines.p"
-import { panic } from "../private/panic"
+import { add } from "../../private/implementations/add.p"
+import { diffLines } from "../../private/implementations/diffLines.p"
 
-
-export const fDiffData: api.FDiffData = ($) => {
+export const idiffData: api.CdiffData = ($) => {
 
     const changes = diffLines($.originalData, $.changedData, { newlineIsToken: false })
 
@@ -19,12 +17,12 @@ export const fDiffData: api.FDiffData = ($) => {
     let lineCountOfChanged = lineOffset
     changes.forEach((change) => {
         if (change.count === undefined) {
-            panic("unexpected: no line count")
+            pi.panic("unexpected: no line count")
         }
         if (change.added) {
             if (change.removed) {
                 //added and removed???
-                panic("unexpected: added and removed")
+                pi.panic("unexpected: added and removed")
             } else {
                 parts.push({
                     startLineInOriginal: lineCountOfOriginal,
