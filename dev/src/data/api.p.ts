@@ -13,14 +13,13 @@ import {
     taggedUnion,
     types,
     _function,
-    _null,
+    nullType,
 } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 
 import {
     externalReference as er,
     reference as ref,
     string as str,
-    _null as nll,
     boolean as bln,
 } from "lib-pareto-typescript-project/dist/modules//api/api/shorthands.p"
 
@@ -30,7 +29,7 @@ import * as NAPI from "lib-pareto-typescript-project/dist/modules//api"
 const wd = pr.wrapRawDictionary
 
 export const api: NAPI.TModuleDefinition = {
-    glossary: {
+    'glossary': {
         'imports': wd({
         }),
         'types': types({
@@ -49,8 +48,8 @@ export const api: NAPI.TModuleDefinition = {
                 "startLineInChanged": member(number()),
                 "lines": member(array(string())),
                 "type": member(taggedUnion({
-                    "removed": _null(),
-                    "added": _null(),
+                    "removed": nullType(),
+                    "added": nullType(),
                 }))
             })
         }),
@@ -67,16 +66,16 @@ export const api: NAPI.TModuleDefinition = {
         'callbacks': wd({}),
         'interfaces': wd({}),
     },
-    api: {
-        imports: wd({}),
-        algorithms: wd({
+    'api': {
+        'imports': wd({}),
+        'algorithms': wd({
             "stringsAreEqual": ["algorithm", {
-                type: ["function", {
+                'type': ["function", {
                     "function": "StringsAreEqual"
                 }]
             } ],
             "diffData": ["algorithm", {
-                type: ["function", {
+                'type': ["function", {
                     "function": "DiffData"
                 }]
             } ]
