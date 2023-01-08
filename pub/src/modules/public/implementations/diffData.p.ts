@@ -28,7 +28,7 @@ export const idiffData: api.CdiffData = ($) => {
                     startLineInOriginal: lineCountOfOriginal,
                     startLineInChanged: lineCountOfChanged,
                     lines: pi.wrapRawArray(change.value.split($.newline)),
-                    type: ["added", null],
+                    type: ['added', null],
                 })
             }
             lineCountOfChanged = add(lineCountOfChanged, change.count)
@@ -38,7 +38,7 @@ export const idiffData: api.CdiffData = ($) => {
                     startLineInOriginal: lineCountOfOriginal,
                     startLineInChanged: lineCountOfChanged,
                     lines: pi.wrapRawArray(change.value.split($.newline)),
-                    type: ["removed", null],
+                    type: ['removed', null],
                 })
             } else {
                 lineCountOfChanged = add(lineCountOfChanged, change.count)

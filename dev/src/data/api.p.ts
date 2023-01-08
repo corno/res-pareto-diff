@@ -69,13 +69,13 @@ export const api: NAPI.TModuleDefinition = {
     'api': {
         'imports': wd({}),
         'algorithms': wd({
-            "stringsAreEqual": ["algorithm", {
-                'type': ["function", {
+            "stringsAreEqual": ['algorithm', {
+                'type': ['function', {
                     "function": "StringsAreEqual"
                 }]
             } ],
-            "diffData": ["algorithm", {
-                'type': ["function", {
+            "diffData": ['algorithm', {
+                'type': ['function', {
                     "function": "DiffData"
                 }]
             } ]
