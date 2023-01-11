@@ -11,7 +11,7 @@ import { api } from "./api.p"
 const wd = pr.wrapRawDictionary
 
 export const project: mproject.TProject = {
-    'resource': true,
+    'type': ['resource', null],
     'modules': wd({
         "public": {
             'definition': api,

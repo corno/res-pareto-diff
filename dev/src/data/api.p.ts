@@ -30,8 +30,7 @@ const wd = pr.wrapRawDictionary
 
 export const api: NAPI.TModuleDefinition = {
     'glossary': {
-        'imports': wd({
-        }),
+        'imports': wd({}),
         'types': types({
             "StringComparisonData": group({
                 "a": member(string()),
@@ -63,18 +62,25 @@ export const api: NAPI.TModuleDefinition = {
                 'return value': ref("DiffDataResult"),
             }
         }),
-        'callbacks': wd({}),
         'interfaces': wd({}),
+        'callbacks': wd({}),
+        'pipes': wd({}),
     },
     'api': {
         'imports': wd({}),
         'algorithms': wd({
-            "stringsAreEqual": ['function', {
-                'function': "StringsAreEqual"
-            }],
-            "diffData": ['function', {
-                'function': "DiffData"
-            }]
+            "stringsAreEqual": {
+                'definition': ['function', {
+                    'function': "StringsAreEqual"
+                }],
+                'type': ['reference', null],
+            },
+            "diffData": {
+                'definition': ['function', {
+                    'function': "DiffData"
+                }],
+                'type': ['reference', null],
+            }
         })
     }
 }
