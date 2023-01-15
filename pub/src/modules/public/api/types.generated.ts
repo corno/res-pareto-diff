@@ -13,8 +13,8 @@ export type TMultilinePart = {
     readonly "startLineInChanged": number
     readonly "startLineInOriginal": number
     readonly "type": 
-        | [ "added", null ]
-        | [ "removed", null ]
+        | ["added", null]
+        | ["removed", null]
 }
 
 export type TStringComparisonData = {
