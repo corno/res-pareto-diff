@@ -2,11 +2,12 @@ import * as pi from "pareto-core-internals"
 
 import * as api from "../api"
 
-import { add } from "../../private/implementations/add.p"
-import { diffLines } from "../../private/implementations/diffLines.p"
+import { diffLines } from "diff"
 
 export const idiffData: api.CdiffData = ($) => {
-
+    function add(a: number, b: number): number {
+        return a + b
+    }
     const changes = diffLines($.originalData, $.changedData, { newlineIsToken: false })
 
     const parts: api.TMultilinePart[] = []
