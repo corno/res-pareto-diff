@@ -21,38 +21,42 @@ import {
     reference as ref,
     string as str,
     boolean as bln,
-} from "lib-pareto-typescript-project/dist/modules//api/api/shorthands.p"
+} from "lib-pareto-typescript-project/dist/modules/moduleDefinition/api/shorthands.p"
 
-import * as NAPI from "lib-pareto-typescript-project/dist/modules//api"
+import * as NAPI from "lib-pareto-typescript-project/dist/modules/moduleDefinition"
 
 
-const wd = pr.wrapRawDictionary
+const d = pr.wrapRawDictionary
 
-export const api: NAPI.TModuleDefinition = {
+export const $: NAPI.TModuleDefinition = {
     'glossary': {
-        'imports': wd({}),
-        'types': types({
-            "StringComparisonData": group({
-                "a": member(string()),
-                "b": member(string()),
+        'imports': d({}),
+        'namespace': {
+            'types': types({
+                "StringComparisonData": group({
+                    "a": member(string()),
+                    "b": member(string()),
+                }),
+                "DiffData": group({
+                    "originalData": member(string()),
+                    "changedData": member(string()),
+                    "newline": member(string()),
+                }),
+                "DiffDataResult": optional(array(reference("MultilinePart"))),
+                "MultilinePart": group({
+                    "startLineInOriginal": member(number()),
+                    "startLineInChanged": member(number()),
+                    "lines": member(array(string())),
+                    "type": member(taggedUnion({
+                        "removed": nullType(),
+                        "added": nullType(),
+                    }))
+                })
             }),
-            "DiffData": group({
-                "originalData": member(string()),
-                "changedData": member(string()),
-                "newline": member(string()),
-            }),
-            "DiffDataResult": optional(array(reference("MultilinePart"))),
-            "MultilinePart": group({
-                "startLineInOriginal": member(number()),
-                "startLineInChanged": member(number()),
-                "lines": member(array(string())),
-                "type": member(taggedUnion({
-                    "removed": nullType(),
-                    "added": nullType(),
-                }))
-            })
-        }),
-        'functions': wd({
+            'interfaces': d({}),
+
+        },
+        'functions': d({
             "StringsAreEqual": {
                 'data': ref("StringComparisonData"),
                 'return value': bln(),
@@ -62,13 +66,12 @@ export const api: NAPI.TModuleDefinition = {
                 'return value': ref("DiffDataResult"),
             }
         }),
-        'interfaces': wd({}),
-        'callbacks': wd({}),
-        'pipes': wd({}),
+        'callbacks': d({}),
+        'pipes': d({}),
     },
     'api': {
-        'imports': wd({}),
-        'algorithms': wd({
+        'imports': d({}),
+        'algorithms': d({
             "stringsAreEqual": {
                 'definition': ['function', {
                     'function': "StringsAreEqual"
