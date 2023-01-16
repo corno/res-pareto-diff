@@ -13,7 +13,9 @@ import {
     taggedUnion,
     types,
     _function,
-    nullType,
+    null_,
+    typeReference,
+    externalTypeReference,
 } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 
 import {
@@ -30,7 +32,9 @@ const d = pr.wrapRawDictionary
 
 export const $: NAPI.TModuleDefinition = {
     'glossary': {
-        'imports': d({}),
+        'imports': d({
+            "common": "glo-pareto-common",
+        }),
         'namespace': {
             'types': types({
                 "StringComparisonData": group({
@@ -48,8 +52,8 @@ export const $: NAPI.TModuleDefinition = {
                     "startLineInChanged": member(number()),
                     "lines": member(array(string())),
                     "type": member(taggedUnion({
-                        "removed": nullType(),
-                        "added": nullType(),
+                        "removed": null_(),
+                        "added": null_(),
                     }))
                 })
             }),
@@ -58,12 +62,12 @@ export const $: NAPI.TModuleDefinition = {
         },
         'functions': d({
             "StringsAreEqual": {
-                'data': ref("StringComparisonData"),
-                'return value': bln(),
+                'data': typeReference("StringComparisonData"),
+                'return value': externalTypeReference("common", "Boolean"),
             },
             "DiffData": {
-                'data': ref("DiffData"),
-                'return value': ref("DiffDataResult"),
+                'data': typeReference("DiffData"),
+                'return value': typeReference("DiffDataResult"),
             }
         }),
         'callbacks': d({}),

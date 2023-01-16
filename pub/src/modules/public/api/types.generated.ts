@@ -1,4 +1,5 @@
 import * as pt from "pareto-core-types"
+import * as mcommon from "glo-pareto-common"
 
 export type TDiffData = {
     readonly "changedData": string
@@ -24,4 +25,4 @@ export type TStringComparisonData = {
 
 export type FDiffData = ($: TDiffData) => TDiffDataResult
 
-export type FStringsAreEqual = ($: TStringComparisonData) => boolean
+export type FStringsAreEqual = ($: TStringComparisonData) => mcommon.TBoolean
