@@ -4,7 +4,7 @@ import * as api from "../api"
 
 import { diffLines } from "diff"
 
-export const idiffData: api.CdiffData = ($) => {
+export const $$: api.CdiffData = ($) => {
     function add(a: number, b: number): number {
         return a + b
     }
