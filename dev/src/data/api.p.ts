@@ -25,12 +25,12 @@ import {
     boolean as bln,
 } from "lib-pareto-typescript-project/dist/modules/moduleDefinition/api/shorthands.p"
 
-import * as NAPI from "lib-pareto-typescript-project/dist/modules/moduleDefinition"
+import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/modules/moduleDefinition"
 
 
 const d = pr.wrapRawDictionary
 
-export const $: NAPI.TModuleDefinition = {
+export const $: mmoduleDefinition.TModuleDefinition = {
     'glossary': {
         'imports': d({
             "common": "glo-pareto-common",
