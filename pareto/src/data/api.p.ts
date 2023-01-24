@@ -31,6 +31,7 @@ export const $: mmoduleDefinition.TModuleDefinition = {
         'imports': d({
             "common": "glo-pareto-common",
         }),
+        'parameters': d({}),
         'namespace': {
             'types': types({
                 "StringComparisonData": group({
