@@ -19,11 +19,11 @@
   "version": "0.20.0",
   "dependencies": {
     "diff": "^5.1.0",
-    "glo-pareto-common": "^0.6.0",
+    "glo-pareto-common": "^0.7.0",
     "pareto-core-internals": "^0.11.0"
   },
   "devDependencies": {
     "@types/diff": "^5.0.2"
   },
-  "content-fingerprint": "e1ec2ab10730831a0f572ebfd195e96818703000"
+  "content-fingerprint": "a3889b2bc41bc6f19cf8502f97b2bb4bff0b5a31"
 }
