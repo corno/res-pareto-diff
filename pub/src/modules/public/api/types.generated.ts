@@ -23,6 +23,6 @@ export type TStringComparisonData = {
     readonly 'b': string
 }
 
-export type FDiffData = ($: TDiffData) => TDiffDataResult
+export type FDiffData = ($: TDiffData,) => TDiffDataResult
 
-export type FStringsAreEqual = ($: TStringComparisonData) => mcommon.TBoolean
+export type FStringsAreEqual = ($: TStringComparisonData,) => mcommon.TBoolean

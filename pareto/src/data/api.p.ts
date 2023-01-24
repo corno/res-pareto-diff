@@ -61,31 +61,23 @@ export const $: mmoduleDefinition.TModuleDefinition = {
 
         },
         'functions': d({
-            "StringsAreEqual": {
-                'data': typeReference("StringComparisonData"),
-                'return value': externalTypeReference("common", "Boolean"),
-            },
-            "DiffData": {
-                'data': typeReference("DiffData"),
-                'return value': typeReference("DiffDataResult"),
-            }
+            "StringsAreEqual": _function(typeReference("StringComparisonData"), externalTypeReference("common", "Boolean")),
+            "DiffData": _function(typeReference("DiffData"), typeReference("DiffDataResult")),
         }),
-        'callbacks': d({}),
-        'pipes': d({}),
     },
     'api': {
         'imports': d({}),
         'algorithms': d({
             "stringsAreEqual": {
-                'definition': ['function', {
+                'definition':{
                     'function': "StringsAreEqual"
-                }],
+                },
                 'type': ['reference', null],
             },
             "diffData": {
-                'definition': ['function', {
+                'definition': {
                     'function': "DiffData"
-                }],
+                },
                 'type': ['reference', null],
             }
         })
