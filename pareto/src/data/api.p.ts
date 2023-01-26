@@ -32,31 +32,28 @@ export const $: mmoduleDefinition.TModuleDefinition = {
             "common": "glo-pareto-common",
         }),
         'parameters': d({}),
-        'namespace': {
-            'types': types({
-                "StringComparisonData": group({
-                    "a": member(string()),
-                    "b": member(string()),
-                }),
-                "DiffData": group({
-                    "originalData": member(string()),
-                    "changedData": member(string()),
-                    "newline": member(string()),
-                }),
-                "DiffDataResult": optional(array(reference("MultilinePart"))),
-                "MultilinePart": group({
-                    "startLineInOriginal": member(number()),
-                    "startLineInChanged": member(number()),
-                    "lines": member(array(string())),
-                    "type": member(taggedUnion({
-                        "removed": null_(),
-                        "added": null_(),
-                    }))
-                })
+        'types': types({
+            "StringComparisonData": group({
+                "a": member(string()),
+                "b": member(string()),
             }),
-            'interfaces': d({}),
-
-        },
+            "DiffData": group({
+                "originalData": member(string()),
+                "changedData": member(string()),
+                "newline": member(string()),
+            }),
+            "DiffDataResult": optional(array(reference("MultilinePart"))),
+            "MultilinePart": group({
+                "startLineInOriginal": member(number()),
+                "startLineInChanged": member(number()),
+                "lines": member(array(string())),
+                "type": member(taggedUnion({
+                    "removed": null_(),
+                    "added": null_(),
+                }))
+            })
+        }),
+        'interfaces': d({}),
         'functions': d({
             "StringsAreEqual": _function(typeReference("StringComparisonData"), externalTypeReference("common", "Boolean")),
             "DiffData": _function(typeReference("DiffData"), typeReference("DiffDataResult")),
@@ -66,7 +63,7 @@ export const $: mmoduleDefinition.TModuleDefinition = {
         'imports': d({}),
         'algorithms': d({
             "stringsAreEqual": {
-                'definition':{
+                'definition': {
                     'function': "StringsAreEqual"
                 },
                 'type': ['reference', null],
