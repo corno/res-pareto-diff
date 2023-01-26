@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/corno/res-pareto-diff.git"
   },
-  "version": "0.21.0",
+  "version": "0.22.0",
   "dependencies": {
     "diff": "^5.1.0",
     "glo-pareto-common": "^0.8.0",
