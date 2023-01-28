@@ -49,8 +49,8 @@ export const $$: api.CdiffData = ($) => {
 
     })
     if (parts.length === 0) {
-        return null
+        return ['not set', {}]
     } else {
-        return pi.wrapRawArray(parts)
+        return ['set', pi.wrapRawArray(parts)]
     }
 }

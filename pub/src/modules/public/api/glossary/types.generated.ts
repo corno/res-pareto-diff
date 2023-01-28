@@ -2,6 +2,17 @@ import * as pt from 'pareto-core-types'
 
 import * as mcommon from "glo-pareto-common"
 
+export namespace VOptional {
+    
+    export namespace Onot__set {}
+    export type Onot__set<AType> = {}
+}
+export type VOptional<AType> = 
+    | ['not set', VOptional.Onot__set<AType>]
+    | ['set', AType]
+
+export type MOptional<AType> = VOptional<AType>
+
 export namespace GDiffData {}
 export type GDiffData = {
     readonly 'changedData': string
@@ -12,10 +23,10 @@ export type UDiffData = GDiffData
 
 export namespace GDiffDataResult {
     
-    export namespace O {}
-    export type O = pt.Array<UMultilinePart>
+    export namespace TPType {}
+    export type TPType = pt.Array<UMultilinePart>
 }
-export type GDiffDataResult = null | GDiffDataResult.O
+export type GDiffDataResult = MOptional<GDiffDataResult.TPType>
 export type UDiffDataResult = GDiffDataResult
 
 export namespace GMultilinePart {

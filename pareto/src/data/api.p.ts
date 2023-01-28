@@ -1,10 +1,7 @@
 import * as pr from 'pareto-core-raw'
+
 import {
     array,
-    optional,
-    boolean,
-    dictionary,
-    externalReference,
     group,
     member,
     number,
@@ -15,14 +12,13 @@ import {
     _function,
     null_,
     typeReference,
-    externalTypeReference,
+    parameter,
+    template,
 } from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
 
-import { definitionReference, externalDefinitionReference, constructor } from "lib-pareto-typescript-project/dist/modules/moduleDefinition/api/shorthands.p"
-
+import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/modules/moduleDefinition/api/shorthands.p"
 
 import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/modules/moduleDefinition"
-
 
 const d = pr.wrapRawDictionary
 
@@ -32,7 +28,15 @@ export const $: mmoduleDefinition.TModuleDefinition = {
             "common": "glo-pareto-common",
         }),
         'parameters': d({}),
-        'templates': d({}),
+        'templates': d({
+            "Optional": {
+                'parameters': d({ "Type": {}, }),
+                'type': taggedUnion({
+                    "set": parameter("Type"),
+                    "not set": group({}),
+                })
+            }
+        }),
         'types': types({
             "StringComparisonData": group({
                 "a": member(string()),
@@ -43,7 +47,9 @@ export const $: mmoduleDefinition.TModuleDefinition = {
                 "changedData": member(string()),
                 "newline": member(string()),
             }),
-            "DiffDataResult": optional(array(reference("MultilinePart"))),
+            "DiffDataResult": template("Optional", {
+                "Type": array(reference("MultilinePart"))
+            }),
             "MultilinePart": group({
                 "startLineInOriginal": member(number()),
                 "startLineInChanged": member(number()),
@@ -56,25 +62,15 @@ export const $: mmoduleDefinition.TModuleDefinition = {
         }),
         'interfaces': d({}),
         'functions': d({
-            "StringsAreEqual": _function(typeReference("StringComparisonData"), externalTypeReference("common", "Boolean")),
+            "StringsAreEqual": _function(typeReference("StringComparisonData"), typeReference("common", "Boolean")),
             "DiffData": _function(typeReference("DiffData"), typeReference("DiffDataResult")),
         }),
     },
     'api': {
         'imports': d({}),
         'algorithms': d({
-            "stringsAreEqual": {
-                'definition': {
-                    'function': "StringsAreEqual"
-                },
-                'type': ['reference', null],
-            },
-            "diffData": {
-                'definition': {
-                    'function': "DiffData"
-                },
-                'type': ['reference', null],
-            }
+            "stringsAreEqual": algorithm(definitionReference("StringsAreEqual")),
+            "diffData": algorithm(definitionReference("DiffData")),
         })
     }
 }
