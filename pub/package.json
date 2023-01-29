@@ -1,29 +1,25 @@
 {
-  "author": "Corno",
-  "bugs": {
-    "url": "https://github.com/corno/pareto/issues"
-  },
-  "description": "",
-  "homepage": "https://github.com/corno/pareto#readme",
-  "keywords": [],
-  "files": [
-    "dist"
-  ],
-  "license": "ISC",
-  "main": "./dist",
   "name": "res-pareto-diff",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/corno/res-pareto-diff.git"
-  },
-  "version": "0.23.0",
+  "author": "Corno",
+  "license": "ISC",
+  "description": "a pareto wrapper for the diff library 'http://github.com/kpdecker/jsdiff'",
   "dependencies": {
     "diff": "^5.1.0",
-    "glo-pareto-common": "^0.9.0",
+    "glo-pareto-common": "^0.10.0",
     "pareto-core-internals": "^0.11.0"
   },
   "devDependencies": {
     "@types/diff": "^5.0.2"
   },
-  "content-fingerprint": "ee2b67941a22333ad008c333c45ae003226c8b00"
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/corno/res-pareto-diff.git"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "version": "0.0.0",
+  "content-fingerprint": "bb722239a529843f6cf4411172a908d712014451"
 }
