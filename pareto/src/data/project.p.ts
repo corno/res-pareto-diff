@@ -13,20 +13,18 @@ export const $: mproject.TProject = {
     'description': "a pareto wrapper for the diff library 'http://github.com/kpdecker/jsdiff'",
     'license': "ISC",
 
-    'type': ['resource',  {
-        'devDependencies': d({
-            "@types/diff": {},
-        }),
-    }],
-    'modules': d({
-        "public": {
-            'definition': api,
-        },
-    }),
-    'main': "public",
     'pubdependencies': d({
         "glo-pareto-common": {},
         "diff": {},
     }),
-    'testdependencies': d({}),
+    'type': ['resource', {
+        'definition': api,
+        'devDependencies': d({
+            "@types/diff": {},
+        }),
+        'test': {
+            'dependencies': d({
+            }),
+        }
+    }],
 }
