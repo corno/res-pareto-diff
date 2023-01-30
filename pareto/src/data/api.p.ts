@@ -9,16 +9,17 @@ import {
     string,
     taggedUnion,
     types,
-    _function,
     null_,
     typeReference,
     parameter,
     template,
-} from "lib-pareto-typescript-project/dist/modules/glossary/api/shorthands.p"
+    func,
+    data,
+} from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands.p"
 
-import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/modules/moduleDefinition/api/shorthands.p"
+import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/submodules/moduleDefinition/shorthands.p"
 
-import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/modules/moduleDefinition"
+import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/submodules/moduleDefinition"
 
 const d = pr.wrapRawDictionary
 
@@ -62,8 +63,8 @@ export const $: mmoduleDefinition.TModuleDefinition = {
         }),
         'interfaces': d({}),
         'functions': d({
-            "StringsAreEqual": _function(typeReference("StringComparisonData"), typeReference("common", "Boolean")),
-            "DiffData": _function(typeReference("DiffData"), typeReference("DiffDataResult")),
+            "StringsAreEqual": func(typeReference("StringComparisonData"), null, null, data(typeReference("common", "Boolean"), false)),
+            "DiffData": func(typeReference("DiffData"), null, null, data(typeReference("DiffDataResult"), false)),
         }),
     },
     'api': {
