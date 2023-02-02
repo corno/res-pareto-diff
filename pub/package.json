@@ -1,8 +1,8 @@
 {
-  "name": "res-pareto-diff",
   "author": "Corno",
   "license": "ISC",
   "description": "a pareto wrapper for the diff library 'http://github.com/kpdecker/jsdiff'",
+
   "dependencies": {
     "diff": "^5.1.0",
     "glo-pareto-common": "^0.10.0",
@@ -15,11 +15,8 @@
     "dist"
   ],
   "repository": {
-    "type": "git",
-    "url": "http://github.com/corno/res-pareto-diff.git"
+    "type": "git"
   },
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "version": "0.0.0",
-  "content-fingerprint": "3ab65544d91699c8c7145dd006b4682e0319ed43"
+  "types": "dist/index.d.ts"
 }
