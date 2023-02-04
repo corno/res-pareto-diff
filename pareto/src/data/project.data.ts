@@ -2,7 +2,7 @@ import * as pr from 'pareto-core-raw'
 
 import * as mproject from "lib-pareto-typescript-project/dist/submodules/project"
 
-import { $ as api } from "./api.p"
+import { $ as api } from "./api.data"
 
 const d = pr.wrapRawDictionary
 
