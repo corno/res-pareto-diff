@@ -11,10 +11,11 @@ import {
     types,
     null_,
     typeReference,
-    parameter,
-    template,
     func,
     data,
+    type,
+    parametrizedReference,
+    optional,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands.p"
 
 import { definitionReference, constructor, algorithm } from "lib-pareto-typescript-project/dist/submodules/moduleDefinition/shorthands.p"
@@ -23,35 +24,24 @@ import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/submodule
 
 const d = pr.wrapRawDictionary
 
-export const $: mmoduleDefinition.TModuleDefinition = {
+export const $: mmoduleDefinition.T.ModuleDefinition = {
     'glossary': {
         'imports': d({
             "common": "glo-pareto-common",
         }),
         'parameters': d({}),
-        'templates': d({
-            "Optional": {
-                'parameters': d({ "Type": {}, }),
-                'type': taggedUnion({
-                    "set": parameter("Type"),
-                    "not set": group({}),
-                })
-            }
-        }),
-        'types': types({
-            "StringComparisonData": group({
+        'types': d({
+            "StringComparisonData": type( group({
                 "a": member(string()),
                 "b": member(string()),
-            }),
-            "DiffData": group({
+            })),
+            "DiffData": type( group({
                 "originalData": member(string()),
                 "changedData": member(string()),
                 "newline": member(string()),
-            }),
-            "DiffDataResult": template("Optional", {
-                "Type": array(reference("MultilinePart"))
-            }),
-            "MultilinePart": group({
+            })),
+            "DiffDataResult": type( optional(array(reference("MultilinePart")))),
+            "MultilinePart": type(group({
                 "startLineInOriginal": member(number()),
                 "startLineInChanged": member(number()),
                 "lines": member(array(string())),
@@ -59,7 +49,7 @@ export const $: mmoduleDefinition.TModuleDefinition = {
                     "removed": null_(),
                     "added": null_(),
                 }))
-            })
+            })),
         }),
         'interfaces': d({}),
         'functions': d({

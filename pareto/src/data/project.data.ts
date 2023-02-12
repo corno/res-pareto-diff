@@ -6,7 +6,7 @@ import { $ as api } from "./api.data"
 
 const d = pr.wrapRawDictionary
 
-export const $: mproject.TProject = {
+export const $: mproject.T.Project = {
     'author': "Corno",
     'description': "a pareto wrapper for the diff library 'http://github.com/kpdecker/jsdiff'",
     'license': "ISC",

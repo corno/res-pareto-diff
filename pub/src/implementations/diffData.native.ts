@@ -10,7 +10,7 @@ export const $$: api.CdiffData = ($) => {
     }
     const changes = diffLines($.originalData, $.changedData, { newlineIsToken: false })
 
-    const parts: api.TMultilinePart[] = []
+    const parts: api.T.MultilinePart[] = []
 
     const lineOffset = 0
 
@@ -49,8 +49,8 @@ export const $$: api.CdiffData = ($) => {
 
     })
     if (parts.length === 0) {
-        return ['not set', {}]
+        return [false]
     } else {
-        return ['set', pi.wrapRawArray(parts)]
+        return [true, pi.wrapRawArray(parts)]
     }
 }

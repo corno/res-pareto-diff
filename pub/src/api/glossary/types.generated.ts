@@ -2,54 +2,78 @@ import * as pt from 'pareto-core-types'
 
 import * as mcommon from "glo-pareto-common"
 
-export namespace VOptional {
+export namespace T {
     
-    export namespace Onot__set {}
-    export type Onot__set<AType> = {}
-}
-export type VOptional<AType> = 
-    | ['not set', VOptional.Onot__set<AType>]
-    | ['set', AType]
-
-export type MOptional<AType> = VOptional<AType>
-
-export namespace GDiffData {}
-export type GDiffData = {
-    readonly 'changedData': string
-    readonly 'newline': string
-    readonly 'originalData': string
-}
-export type UDiffData = GDiffData
-
-export namespace GDiffDataResult {
+    export namespace DiffData {
+        
+        export type changedData = string
+        
+        export type newline = string
+        
+        export type originalData = string
+    }
     
-    export namespace TPType {}
-    export type TPType = pt.Array<UMultilinePart>
-}
-export type GDiffDataResult = MOptional<GDiffDataResult.TPType>
-export type UDiffDataResult = GDiffDataResult
-
-export namespace GMultilinePart {
+    export type DiffData = {
+        readonly 'changedData': string
+        readonly 'newline': string
+        readonly 'originalData': string
+    }
     
-    export namespace Plines {}
-    export type Plines = pt.Array<string>
+    export namespace DiffDataResult {
+        
+        export namespace O {
+            
+            export type A = T.MultilinePart
+        }
+        
+        export type O = pt.Array<T.MultilinePart>
+    }
     
-    export namespace Ptype {}
-    export type Ptype = 
-        | ['added', null]
-        | ['removed', null]
+    export type DiffDataResult = [ false ] | [ true, pt.Array<T.MultilinePart>]
+    
+    export namespace MultilinePart {
+        
+        export namespace lines {
+            
+            export type A = string
+        }
+        
+        export type lines = pt.Array<string>
+        
+        export type startLineInChanged = number
+        
+        export type startLineInOriginal = number
+        
+        export namespace _ltype {
+            
+            export type added = null
+            
+            export type removed = null
+        }
+        
+        export type _ltype = 
+            | ['added', null]
+            | ['removed', null]
+    }
+    
+    export type MultilinePart = {
+        readonly 'lines': pt.Array<string>
+        readonly 'startLineInChanged': number
+        readonly 'startLineInOriginal': number
+        readonly 'type': 
+            | ['added', null]
+            | ['removed', null]
+    }
+    
+    export namespace StringComparisonData {
+        
+        export type a = string
+        
+        export type b = string
+    }
+    
+    export type StringComparisonData = {
+        readonly 'a': string
+        readonly 'b': string
+    }
 }
-export type GMultilinePart = {
-    readonly 'lines': GMultilinePart.Plines
-    readonly 'startLineInChanged': number
-    readonly 'startLineInOriginal': number
-    readonly 'type': GMultilinePart.Ptype
-}
-export type UMultilinePart = GMultilinePart
-
-export namespace GStringComparisonData {}
-export type GStringComparisonData = {
-    readonly 'a': string
-    readonly 'b': string
-}
-export type UStringComparisonData = GStringComparisonData
