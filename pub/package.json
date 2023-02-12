@@ -2,24 +2,21 @@
   "author": "Corno",
   "license": "ISC",
   "description": "a pareto wrapper for the diff library 'http://github.com/kpdecker/jsdiff'",
+
   "dependencies": {
-    "diff": "^5.1.0",
-    "glo-pareto-common": "^0.12.0",
-    "pareto-core-internals": "^0.11.1"
+    "diff": "^0.0.0",
+    "glo-pareto-common": "^0.0.0",
+    "pareto-core-internals": "^0.0.0"
   },
   "devDependencies": {
-    "@types/diff": "^5.0.2"
+    "@types/diff": "^0.0.0"
   },
   "files": [
     "dist"
   ],
   "repository": {
-    "type": "git",
-    "url": "http://github.com/corno/res-pareto-diff.git"
+    "type": "git"
   },
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "name": "res-pareto-diff",
-  "version": "0.25.0",
-  "content-fingerprint": "ff5d366208da81d542892e6199c4253c8e065dcf"
+  "types": "dist/index.d.ts"
 }

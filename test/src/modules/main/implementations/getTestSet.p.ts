@@ -11,7 +11,7 @@ import * as pub from "../../../../../pub"
 
 export const $$: api.CgetTestSet = () => {
 
-    const builder = ps.createUnsafeDictionaryBuilder<mtest.TTestElement>()
+    const builder = ps.createUnsafeDictionaryBuilder<mtest.T.TestElement>()
     function createTest(name: string, actual: string, expected: string) {
         builder.add(name, {
             type: ['test', {
