@@ -1,4 +1,4 @@
-import * as pr from 'pareto-core-raw'
+import * as pd from 'pareto-core-data'
 
 import {
     array,
@@ -22,7 +22,7 @@ import { definitionReference, constructor, algorithm } from "lib-pareto-typescri
 
 import * as mmoduleDefinition from "lib-pareto-typescript-project/dist/submodules/moduleDefinition"
 
-const d = pr.wrapRawDictionary
+const d = pd.wrapRawDictionary
 
 export const $: mmoduleDefinition.T.ModuleDefinition = {
     'glossary': {
