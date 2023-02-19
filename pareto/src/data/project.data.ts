@@ -4,9 +4,9 @@ import * as mproject from "lib-pareto-typescript-project/dist/submodules/project
 
 import { $ as api } from "./api.data"
 
-const d = pd.wrapRawDictionary
+const d = pd.d
 
-export const $: mproject.T.Project = {
+export const $: mproject.T.Project<pd.SourceLocation> = {
     'author': "Corno",
     'description': "a pareto wrapper for the diff library 'http://github.com/kpdecker/jsdiff'",
     'license': "ISC",
