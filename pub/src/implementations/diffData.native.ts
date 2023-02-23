@@ -1,16 +1,18 @@
 import * as pi from 'pareto-core-internals'
 
-import * as mapi from "../api"
+import * as gapi from "../api"
 
-import * as mdiff from "diff"
+import * as ndiff from "diff"
 
-export const $$: mapi.CdiffData = ($) => {
+import { CdiffData } from "../api"
+
+export const $$:CdiffData = ($) => {
     function add(a: number, b: number): number {
         return a + b
     }
-    const changes = mdiff.diffLines($.originalData, $.changedData, { newlineIsToken: false })
+    const changes = ndiff.diffLines($.originalData, $.changedData, { newlineIsToken: false })
 
-    const parts: mapi.T.MultilinePart[] = []
+    const parts: gapi.T.MultilinePart[] = []
 
     const lineOffset = 0
 

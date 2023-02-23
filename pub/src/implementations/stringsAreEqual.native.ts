@@ -1,5 +1,5 @@
-import * as api from "../api"
+import { CstringsAreEqual } from "../api"
 
-export const $$: api.CstringsAreEqual = ($) => {
+export const $$:CstringsAreEqual = ($) => {
     return $.a === $.b
 }
