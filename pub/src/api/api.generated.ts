@@ -1,11 +1,11 @@
 import * as pt from 'pareto-core-types'
 
-import * as glo from "./glossary"
+import * as gglo from "./glossary"
 
 
-export type CdiffData = glo.FDiffData
+export type CdiffData = gglo.FDiffData
 
-export type CstringsAreEqual = glo.FStringsAreEqual
+export type CstringsAreEqual = gglo.FStringsAreEqual
 
 export type API = {
     diffData: CdiffData
