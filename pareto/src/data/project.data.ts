@@ -9,7 +9,7 @@ const d = pd.d
 export const $: gproject.T.Project<pd.SourceLocation> = {
     'author': "Corno",
     'description': "a pareto wrapper for the diff library 'http://github.com/kpdecker/jsdiff'",
-    'license': "ISC",
+    'license': "TBD",
 
     'dependencies': d({
         "glo-pareto-common": {},
