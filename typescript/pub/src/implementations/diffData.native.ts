@@ -1,10 +1,10 @@
 import * as pi from 'pareto-core-internals'
 
-import * as gapi from "../api"
+import * as gapi from "../definition/glossary"
 
 import * as ndiff from "diff"
 
-import { CdiffData } from "../api"
+import { CdiffData } from "../definition/api.generated"
 
 export const $$:CdiffData = ($) => {
     function add(a: number, b: number): number {
