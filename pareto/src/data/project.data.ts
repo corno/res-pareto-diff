@@ -13,7 +13,7 @@ export const $: gproject.T.Project<pd.SourceLocation> = {
     'license': "TBD",
 
     'dependencies': d({
-        "glo-pareto-common": {},
+        "glo-pareto-common": null,
     }),
     'type': ['resource', {
         'definition': {
@@ -21,10 +21,10 @@ export const $: gproject.T.Project<pd.SourceLocation> = {
             'api': api,
         },
         'nativeDependencies': d({
-            "diff": {},
+            "diff": null,
         }),
         'devDependencies': d({
-            "@types/diff": {},
+            "@types/diff": null,
         }),
         'test': {
             'dependencies': d({
