@@ -1,12 +1,12 @@
 import * as pt from 'pareto-core-types'
 
-import * as gthis from "./glossary"
+import * as g_this from "./glossary"
 
-export type CdiffData = gthis.FDiffData
+export type diffData = g_this.F.DiffData
 
-export type CstringsAreEqual = gthis.FStringsAreEqual
+export type stringsAreEqual = g_this.F.StringsAreEqual
 
 export type API = {
-    diffData: CdiffData
-    stringsAreEqual: CstringsAreEqual
+    diffData: diffData
+    stringsAreEqual: stringsAreEqual
 }

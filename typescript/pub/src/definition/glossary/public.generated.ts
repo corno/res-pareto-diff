@@ -1,9 +1,16 @@
 import * as pt from 'pareto-core-types'
 
-import { T   } from './types.generated'
+import { T } from './types.generated'
 
-import * as gcommon from "glo-pareto-common"
+import * as g_common from "glo-pareto-common"
 
-export type FDiffData = ($: T.DiffData,) => T.DiffDataResult
+export namespace I {}
 
-export type FStringsAreEqual = ($: T.StringComparisonData,) => gcommon.T.Boolean
+export namespace B {}
+
+export namespace F {
+    
+    export type DiffData = ($: T.DiffData,) => T.DiffDataResult
+    
+    export type StringsAreEqual = ($: T.StringComparisonData,) => g_common.T.Boolean
+}

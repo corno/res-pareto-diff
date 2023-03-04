@@ -44,6 +44,7 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
             }))
         })),
     }),
+    'builders': d({}),
     'interfaces': d({}),
     'functions': d({
         "StringsAreEqual": func(typeReference("StringComparisonData"), null, null, data(typeReference("common", "Boolean"), false)),

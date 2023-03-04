@@ -4,9 +4,9 @@ import * as gapi from "../definition/glossary"
 
 import * as ndiff from "diff"
 
-import { CdiffData } from "../definition/api.generated"
+import { diffData } from "../definition/api.generated"
 
-export const $$:CdiffData = ($) => {
+export const $$: diffData = ($) => {
     function add(a: number, b: number): number {
         return a + b
     }
