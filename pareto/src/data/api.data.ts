@@ -9,5 +9,5 @@ export const $: gapi.T.API<pd.SourceLocation> =  {
     'algorithms': d({
         "stringsAreEqual": algorithm(functionReference("this", {}, "StringsAreEqual")),
         "diffData": algorithm(functionReference("this", {}, "DiffData")),
-    })
+    }),
 }

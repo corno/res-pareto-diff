@@ -23,7 +23,7 @@ export namespace T {
         
         export namespace O {
             
-            export type T = T.MultilinePart
+            export type A = T.MultilinePart
         }
         
         export type O = pt.Array<T.MultilinePart>
@@ -35,7 +35,7 @@ export namespace T {
         
         export namespace lines {
             
-            export type T = string
+            export type A = string
         }
         
         export type lines = pt.Array<string>

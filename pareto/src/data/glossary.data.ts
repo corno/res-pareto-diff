@@ -41,7 +41,7 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
             "type": member(taggedUnion({
                 "removed": null_(),
                 "added": null_(),
-            }))
+            })),
         })),
     }),
     'builders': d({}),
