@@ -1,4 +1,4 @@
-import { API } from "./definition/api.generated"
+import { API } from "./api.generated"
 import { $$ as idiffData } from "./implementations/diffData.native"
 import { $$ as istringsAreEqual } from "./implementations/stringsAreEqual.native"
 
