@@ -1,6 +1,6 @@
 import * as pi from 'pareto-core-internals'
 
-import * as gapi from "../glossary"
+import * as g_this from "../glossary"
 
 import * as ndiff from "diff"
 
@@ -12,7 +12,7 @@ export const $$: diffData = ($) => {
     }
     const changes = ndiff.diffLines($.originalData, $.changedData, { newlineIsToken: false })
 
-    const parts: gapi.T.MultilinePart[] = []
+    const parts: g_this.T.MultilinePart[] = []
 
     const lineOffset = 0
 

@@ -7,22 +7,26 @@ import {
     dictionary, member, taggedUnion, types, group,
     array,
     typeReference,
-    data,
-    func,
+    sdata,
+    sfunc,
     type,
     optional,
-    reference,
     glossaryParameter,
     inf,
-    parametrizedInterfaceReference,
     number,
+    ref,
+    externalTypeReference,
+    imp,
 } from "lib-pareto-typescript-project/dist/submodules/glossary/shorthands"
 
-import * as gglossary from "lib-pareto-typescript-project/dist/submodules/glossary"
+import * as g_glossary from "lib-pareto-typescript-project/dist/submodules/glossary"
 const d = pd.d
 
-export const $: gglossary.T.Glossary<pd.SourceLocation> = {
+export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'parameters': d({}),
+    'imports': d({
+        "common": imp({}),
+    }),
     'types': d({
         "StringComparisonData": type( group({
             "a": member(string()),
@@ -33,7 +37,7 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
             "changedData": member(string()),
             "newline": member(string()),
         })),
-        "DiffDataResult": type( optional(array(reference("MultilinePart")))),
+        "DiffDataResult": type( optional(array(ref(typeReference("MultilinePart"))))),
         "MultilinePart": type(group({
             "startLineInOriginal": member(number()),
             "startLineInChanged": member(number()),
@@ -44,10 +48,11 @@ export const $: gglossary.T.Glossary<pd.SourceLocation> = {
             })),
         })),
     }),
-    'builders': d({}),
-    'interfaces': d({}),
-    'functions': d({
-        "StringsAreEqual": func(typeReference("StringComparisonData"), null, null, data(typeReference("common", "Boolean"), false)),
-        "DiffData": func(typeReference("DiffData"), null, null, data(typeReference("DiffDataResult"), false)),
-    }),
+    'type': ['synchronous', {
+        'builders': d({}),
+        'functions': d({
+            "StringsAreEqual": sfunc(typeReference("StringComparisonData"), null, null, sdata(externalTypeReference("common", "Boolean"))),
+            "DiffData": sfunc(typeReference("DiffData"), null, null, sdata(typeReference("DiffDataResult"))),
+        }),
+    }],
 }
