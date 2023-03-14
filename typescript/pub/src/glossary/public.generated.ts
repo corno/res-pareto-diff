@@ -6,9 +6,11 @@ import * as g_common from "glo-pareto-common"
 
 export namespace B {}
 
+export namespace C {}
+
 export namespace F {
     
-    export type DiffData = ($: T.DiffData,) => T.DiffDataResult
+    export type DiffData = ($: T.DiffData) => T.DiffDataResult
     
-    export type StringsAreEqual = ($: T.StringComparisonData,) => g_common.T.Boolean
+    export type StringsAreEqual = ($: T.StringComparisonData) => g_common.T.Boolean
 }

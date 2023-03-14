@@ -51,8 +51,8 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'type': ['synchronous', {
         'builders': d({}),
         'functions': d({
-            "StringsAreEqual": sfunc(typeReference("StringComparisonData"), null, null, sdata(externalTypeReference("common", "Boolean"))),
-            "DiffData": sfunc(typeReference("DiffData"), null, null, sdata(typeReference("DiffDataResult"))),
+            "StringsAreEqual": sfunc(sdata(typeReference("StringComparisonData")), sdata(externalTypeReference("common", "Boolean"))),
+            "DiffData": sfunc(sdata(typeReference("DiffData")), sdata(typeReference("DiffDataResult"))),
         }),
     }],
 }
