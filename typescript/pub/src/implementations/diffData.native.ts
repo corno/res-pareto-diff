@@ -2,15 +2,15 @@ import * as pi from 'pareto-core-internals'
 
 import * as g_this from "../glossary"
 
-import * as ndiff from "diff"
+import * as n_diff from "diff"
 
-import { diffData } from "../api.generated"
+import { A } from "../api.generated"
 
-export const $$: diffData = ($) => {
+export const $$: A.diffData = ($) => {
     function add(a: number, b: number): number {
         return a + b
     }
-    const changes = ndiff.diffLines($.originalData, $.changedData, { newlineIsToken: false })
+    const changes = n_diff.diffLines($.originalData, $.changedData, { newlineIsToken: false })
 
     const parts: g_this.T.MultilinePart[] = []
 

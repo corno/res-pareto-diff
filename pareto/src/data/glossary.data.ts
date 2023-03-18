@@ -2,17 +2,13 @@ import * as pd from 'pareto-core-data'
 
 import {
     string,
-    null_,
-    nested,
-    dictionary, member, taggedUnion, types, group,
+    null_, member, taggedUnion, group,
     array,
     typeReference,
-    sdata,
+    data,
     sfunc,
     type,
     optional,
-    glossaryParameter,
-    inf,
     number,
     ref,
     externalTypeReference,
@@ -28,16 +24,16 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
         "common": imp({}),
     }),
     'types': d({
-        "StringComparisonData": type( group({
+        "StringComparisonData": type(group({
             "a": member(string()),
             "b": member(string()),
         })),
-        "DiffData": type( group({
+        "DiffData": type(group({
             "originalData": member(string()),
             "changedData": member(string()),
             "newline": member(string()),
         })),
-        "DiffDataResult": type( optional(array(ref(typeReference("MultilinePart"))))),
+        "DiffDataResult": type(optional(array(ref(typeReference("MultilinePart"))))),
         "MultilinePart": type(group({
             "startLineInOriginal": member(number()),
             "startLineInChanged": member(number()),
@@ -48,11 +44,18 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
             })),
         })),
     }),
-    'type': ['synchronous', {
-        'builders': d({}),
+    'asynchronous': {
+        'interfaces': d({}),
+        'constructors': d({}),
+        'functions': d({}),
+    },
+    'synchronous': {
+        'interfaces': d({}),
+        'constructors': d({}),
         'functions': d({
-            "StringsAreEqual": sfunc(sdata(typeReference("StringComparisonData")), sdata(externalTypeReference("common", "Boolean"))),
-            "DiffData": sfunc(sdata(typeReference("DiffData")), sdata(typeReference("DiffDataResult"))),
+            "StringsAreEqual": sfunc(data(typeReference("StringComparisonData")), externalTypeReference("common", "Boolean")),
+            "DiffData": sfunc(data(typeReference("DiffData")), typeReference("DiffDataResult")),
         }),
-    }],
+    },
+
 }
