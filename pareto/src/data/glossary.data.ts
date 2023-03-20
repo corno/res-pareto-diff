@@ -6,7 +6,7 @@ import {
     array,
     typeReference,
     data,
-    sfunc,
+    sfunction,
     type,
     optional,
     number,
@@ -46,15 +46,14 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     }),
     'asynchronous': {
         'interfaces': d({}),
-        'constructors': d({}),
-        'functions': d({}),
+        'algorithms': d({}),
+        
     },
     'synchronous': {
         'interfaces': d({}),
-        'constructors': d({}),
-        'functions': d({
-            "StringsAreEqual": sfunc(data(typeReference("StringComparisonData")), externalTypeReference("common", "Boolean")),
-            "DiffData": sfunc(data(typeReference("DiffData")), typeReference("DiffDataResult")),
+        'algorithms': d({
+            "StringsAreEqual": sfunction(externalTypeReference("common", "Boolean"), data(typeReference("StringComparisonData"))),
+            "DiffData": sfunction(typeReference("DiffDataResult"), data(typeReference("DiffData"))),
         }),
     },
 
