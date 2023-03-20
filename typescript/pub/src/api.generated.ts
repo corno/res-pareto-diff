@@ -10,6 +10,6 @@ export namespace A {
 }
 
 export type API = {
-    diffData: A.diffData
-    stringsAreEqual: A.stringsAreEqual
+    readonly 'diffData': A.diffData
+    readonly 'stringsAreEqual': A.stringsAreEqual
 }
