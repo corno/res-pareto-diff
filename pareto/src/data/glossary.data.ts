@@ -23,31 +23,34 @@ export const $: g_glossary.T.Glossary<pd.SourceLocation> = {
     'imports': d({
         "common": imp({}),
     }),
-    'types': d({
-        "StringComparisonData": type(group({
-            "a": member(string()),
-            "b": member(string()),
-        })),
-        "DiffData": type(group({
-            "originalData": member(string()),
-            "changedData": member(string()),
-            "newline": member(string()),
-        })),
-        "DiffDataResult": type(optional(array(ref(typeReference("MultilinePart"))))),
-        "MultilinePart": type(group({
-            "startLineInOriginal": member(number()),
-            "startLineInChanged": member(number()),
-            "lines": member(array(string())),
-            "type": member(taggedUnion({
-                "removed": null_(),
-                "added": null_(),
+    'root': {
+        'namespaces': d({}),
+        'types': d({
+            "StringComparisonData": type(group({
+                "a": member(string()),
+                "b": member(string()),
             })),
-        })),
-    }),
+            "DiffData": type(group({
+                "originalData": member(string()),
+                "changedData": member(string()),
+                "newline": member(string()),
+            })),
+            "DiffDataResult": type(optional(array(ref(typeReference("MultilinePart"))))),
+            "MultilinePart": type(group({
+                "startLineInOriginal": member(number()),
+                "startLineInChanged": member(number()),
+                "lines": member(array(string())),
+                "type": member(taggedUnion({
+                    "removed": null_(),
+                    "added": null_(),
+                })),
+            })),
+        }),
+    },
     'asynchronous': {
         'interfaces': d({}),
         'algorithms': d({}),
-        
+
     },
     'synchronous': {
         'interfaces': d({}),
